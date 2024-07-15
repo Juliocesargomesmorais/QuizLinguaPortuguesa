@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizLP</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: url('https://www.redeinspiraeducadores.com.br/wp-content/uploads/2021/04/magnum-agostiniano-30x17.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: cursive;
+        }
+        .carousel-container {
+            max-width: 80%;
+            text-align: center;
+            margin-top: 20px; /* Espaço acima do carrossel */
+            margin-bottom: 20px; /* Espaço abaixo do carrossel */
+            background-color: rgba(255, 255, 255, 0); /* Fundo semi-transparente */
+            padding: 20px; /* Espaçamento interno */
+            
+            
+        }
+        .carousel {
+            position: relative;
+            overflow: hidden;
+
+            
+        }
+        .carousel img {
+            width: 300px;
+            height: auto;
+            display: none;
+            margin: 0 auto; /* Centralizar horizontalmente */
+        }
+        .carousel img.active {
+            display: block;
+        }
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            font-size: 30px;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+        }
+        .arrow.left {
+            left: 10px;
+        }
+        .arrow.right {
+            right: 10px;
+        }
+        h1 {
+            margin-bottom: 20px; /* Espaço abaixo do título */
+            -webkit-text-stroke-width: 2px;
+            -webkit-text-stroke-color: #000;
+            font-size: 3em; color: #fffdd9;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="carousel-container">
+        <h1>ESCOLHA O SEU PERSONAGEM</h1>
+
+        <div class="carousel">
+            <a href="lurdinha.html"><img src="lurdinha.jpeg" alt="Lurdinha"></a>
+            <a href="escolhadoperso.html"><img src="cassio.jpeg" alt="Cássio"></a>
+            <a href="escolhadoperso.html"><img src="fafa.jpeg" alt="Fafá"></a>
+            <a href="escolhadoperso.html"><img src="glenda.jpeg" alt="Glenda"></a>
+            <a href="escolhadoperso.html"><img src="guimoreira.jpeg" alt=""></a>
+            <a href="escolhadoperso.html"><img src="gustavo (2).jpeg" alt=""></a>
+            <a href="escolhadoperso.html"><img src="junior.jpeg" alt=""></a>
+            <a href="escolhadoperso.html"><img src="leozao.jpeg" alt=""></a>
+            <a href="escolhadoperso.html"><img src="luisbar.jpeg" alt=""></a>
+            <a href="escolhadoperso.html"><img src="marquinhos.jpeg" alt=""></a>
+            <a href="escolhadoperso.html"><img src="paulinho.jpeg" alt=""></a>
+            <a href="escolhadoperso.html"><img src="picinin.jpeg" alt=""></a>
+            <a href="escolhadoperso.html"><img src="renan.jpeg" alt=""></a>
+            <!-- Adicione mais imagens conforme necessário -->
+        </div>
+
+        <div class="arrow left" onclick="changeSlide(-1)">&#10094;</div>
+        <div class="arrow right" onclick="changeSlide(1)">&#10095;</div>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.carousel img');
+
+        function showSlide(n) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slideIndex = (n + slides.length) % slides.length;
+            slides[slideIndex].classList.add('active');
+        }
+
+        function changeSlide(n) {
+            showSlide(slideIndex += n);
+        }
+
+        // Mostrar o primeiro slide ao carregar a página
+        showSlide(slideIndex);
+    </script>
+</body>
+</html>
